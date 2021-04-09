@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Zimuzo Agu">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Snake Game</title>
     </head>
 
     <style>
@@ -17,6 +17,26 @@
             width: 100vw;
             margin: 0;
             background-color: black;
+
+        }
+
+        #snake_game_board {
+            background-color: wheat;
+            width: 100vmin;
+            height: 100vmin;
+            display: grid;
+            grid-template-columns: repeat(21, 1fr);
+            grid-template-rows: repeat(21, 1fr);
+        }
+
+        .snake {
+            background-color: blue;
+            border: .25vmin solid black;
+        }
+
+        .food {
+            background-color: yellow;
+            border: .25vmin solid black;
         }
     </style>
 
