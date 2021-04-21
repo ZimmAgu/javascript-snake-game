@@ -20,7 +20,7 @@ export function update_Snake () {
     }
 
     // To move the snake forward, a value of 1 must be added to either the x or y coordinate of the first element
-    snake_Body[0].x += +1; // -1 makes the snake move left, +1 makes the snake move right
+    snake_Body[0].x += 1; // -1 makes the snake move left, +1 makes the snake move right
     snake_Body[0].y += 0; // -1 makes the snake move up, +1 makes the snake move down
     
 }
