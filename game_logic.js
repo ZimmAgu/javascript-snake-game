@@ -24,7 +24,7 @@ function snake_Game_Loop (current_Render_Time) {
 
     previous_Render_Time = current_Render_Time; // every time the loop ends, the current time becomes the previous time
 
-    update_Snake();
+    update_Snake(); // Updates the snake position after every loop
     draw_Snake(game_Board); // Draws the snake character onto the screen
 }
 
