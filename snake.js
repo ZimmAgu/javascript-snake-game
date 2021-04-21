@@ -2,26 +2,24 @@
 
 export let snake_Moves_Per_Second = 2;
 export let snake_Speed = 1 / snake_Moves_Per_Second; // If the snake moves 2 times per second, 1/2 means there is 0.5 seconds between each move
+import {user_Moves_The_Snake} from "./user_controls.js"
 
-let snake_Body = [
-    {x:11, y:11},
-    {x:12, y:11},
-    {x:13, y:11}
-] // Each element of this array is a segment of the snake containing it's own x and y values on the grid
+let snake_Body = [ {x:11, y:11} ] // Each element of this array is a segment of the snake containing it's own x and y values on the grid
 
 
 
 // Updates the position of the snake
 export function update_Snake () {
-    
+    let snake_Direction = user_Moves_The_Snake();
+
     // This for loop Starts at the second to last segment of the snake and iterates down until it gets to the first segment of the snake
-    for(let snake_Length = snake_Body.length - 2; snake_Length >= 0; snake_Length--) {
+    for (let snake_Length = snake_Body.length - 2; snake_Length >= 0; snake_Length--) {
         snake_Body[snake_Length + 1] = {...snake_Body[snake_Length]}; // When the snake moves, the value of the current x and y coordinates of the current segment object are moved into the next segment
     }
 
     // To move the snake forward, a value of 1 must be added to either the x or y coordinate of the first element
-    snake_Body[0].x += 1; // -1 makes the snake move left, +1 makes the snake move right
-    snake_Body[0].y += 0; // -1 makes the snake move up, +1 makes the snake move down
+    snake_Body[0].x += snake_Direction.x; // -1 makes the snake move left, +1 makes the snake move right
+    snake_Body[0].y += snake_Direction.y; // -1 makes the snake move up, +1 makes the snake move down
     
 }
 
