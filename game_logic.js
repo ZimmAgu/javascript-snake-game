@@ -1,8 +1,12 @@
 // Written by: Zimm Agu
 
 import {snake_Speed} from "./snake.js"
+import {update_Snake, draw_Snake} from "./snake.js"
+
+let game_Board = document.getElementById("snake_game_board")
 
 let previous_Render_Time = 0; 
+
 
 function snake_Game_Loop (current_Render_Time) {
 
@@ -20,7 +24,8 @@ function snake_Game_Loop (current_Render_Time) {
 
     previous_Render_Time = current_Render_Time; // every time the loop ends, the current time becomes the previous time
 
-    console.log(elapsed_Render_Time_In_Seconds);
+    update_Snake();
+    draw_Snake(game_Board); // Draws the snake character onto the screen
 }
 
 window.requestAnimationFrame(snake_Game_Loop);  // Starts the game loop initially
