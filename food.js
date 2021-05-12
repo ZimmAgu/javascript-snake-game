@@ -1,6 +1,6 @@
 
-let food_Location = {x:0, y:0}; // The food coordinates aren't an array because food will always take up just one div
-const SNAKE_GROWTH_RATE;
+let food_Location = {x:1, y:1}; // The food coordinates aren't an array because food will always take up just one div
+const SNAKE_GROWTH_RATE = 1;
 
 export function update_Food () {
 
@@ -16,7 +16,7 @@ export function draw_Food (board) {
     /*  
             Adds a new class to the document
             The new class is named "food" because CSS was implemented to specifically for a div named "food" 
-        */
+    */
     food_Element.classList.add("food"); 
 
     board.appendChild(food_Element); // Adds the snake body to the board
