@@ -2,6 +2,7 @@
 
 import {snake_Speed} from "./snake.js"
 import {update_Snake, draw_Snake} from "./snake.js"
+import {update_Food, draw_Food} from "./food.js"
 
 let game_Board = document.getElementById("snake_game_board")
 
@@ -25,8 +26,10 @@ function snake_Game_Loop (current_Render_Time) {
     previous_Render_Time = current_Render_Time; // every time the loop ends, the current time becomes the previous time
 
     update_Snake(); // Updates the snake position after every loop
+    update_Food(); // Updates the snake food position after every loop
     game_Board.innerHTML = ''; // Clears HTML tags after the snake is updated to avoid every square that the snake has been from appearing on the screen
     draw_Snake(game_Board); // Draws the snake character onto the screen
+    draw_Food(game_Board); // Draws the snake food on to the screen
 }
 
 window.requestAnimationFrame(snake_Game_Loop);  // Starts the game loop initially

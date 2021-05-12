@@ -34,8 +34,10 @@ export function draw_Snake (board) {
         snake_Element.style.gridRowStart = snake_Segment.y;
         snake_Element.style.gridColumnStart = snake_Segment.x;
 
-        // Adds a new class to the document
-        // The new class is named "snake" because CSS was implemented to make any element in the class "snake" blue
+        /*  
+            Adds a new class to the document
+            The new class is named "snake" because CSS was implemented to specifically for a div named "snake" 
+        */
         snake_Element.classList.add("snake"); 
 
         board.appendChild(snake_Element); // Adds the snake body to the board
