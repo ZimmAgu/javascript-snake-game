@@ -1,10 +1,10 @@
 // Written by: Zimm Agu
 
-import {snake_Speed} from "./snake.js"
-import {update_Snake, draw_Snake} from "./snake.js"
-import {update_Food, draw_Food} from "./food.js"
+import {snake_Speed} from "./snake.js";
+import {update_Snake, draw_Snake} from "./snake.js";
+import {update_Food, draw_Food} from "./food.js";
 
-let game_Board = document.getElementById("snake_game_board")
+let game_Board = document.getElementById("snake_game_board");
 
 let previous_Render_Time = 0; 
 
@@ -20,7 +20,7 @@ function snake_Game_Loop (current_Render_Time) {
         so it ends the current iteration of the function
     */   
     if (elapsed_Render_Time_In_Seconds < snake_Speed)
-        return
+        return;
 
 
     previous_Render_Time = current_Render_Time; // every time the loop ends, the current time becomes the previous time

@@ -1,5 +1,6 @@
 
-let food_Location = {x:0, y:0} // The food coordinates aren't an array because food will always take up just one div
+let food_Location = {x:0, y:0}; // The food coordinates aren't an array because food will always take up just one div
+const SNAKE_GROWTH_RATE;
 
 export function update_Food () {
 

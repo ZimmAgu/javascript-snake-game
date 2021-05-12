@@ -2,9 +2,9 @@
 
 export let snake_Moves_Per_Second = 5;
 export let snake_Speed = 1 / snake_Moves_Per_Second; // If the snake moves 2 times per second, 1/2 means there is 0.5 seconds between each move
-import {user_Moves_The_Snake} from "./user_controls.js"
+import {user_Moves_The_Snake} from "./user_controls.js";
 
-let snake_Body = [ {x:11, y:11} ] // Each element of this array is a segment of the snake containing it's own x and y values on the grid
+let snake_Body = [ {x:11, y:11} ]; // Each element of this array is a segment of the snake containing it's own x and y values on the grid
 
 
 
@@ -22,6 +22,9 @@ export function update_Snake () {
     snake_Body[0].y += snake_Direction.y; // -1 makes the snake move up, +1 makes the snake move down
     
 }
+
+
+
 
 
 // Draws the snake to the board
@@ -42,4 +45,11 @@ export function draw_Snake (board) {
 
         board.appendChild(snake_Element); // Adds the snake body to the board
     })
+}
+
+
+
+// Will expand the snake once the food is eaten
+export function expand_Snake () {
+
 }
