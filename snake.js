@@ -10,7 +10,7 @@ let snake_Body = [ {x:11, y:11} ] // Each element of this array is a segment of 
 
 // Updates the position of the snake
 export function update_Snake () {
-    let snake_Direction = user_Moves_The_Snake();
+    let snake_Direction = user_Moves_The_Snake(); // The user_Moves_The_Snake function will return either -1 or +1 in the x or y direction based on which keyboard key the user presses
 
     // This for loop Starts at the second to last segment of the snake and iterates down until it gets to the first segment of the snake
     for (let snake_Length = snake_Body.length - 2; snake_Length >= 0; snake_Length--) {
