@@ -50,10 +50,11 @@ export function draw_Snake (board) {
 
 
 
-// Will expand the snake once the food is eaten
+
 export function expand_Snake (growth_Amount) {
-    new_Snake_Segments += growth_Amount;
+    new_Snake_Segments += growth_Amount; // The snake grows by the amount passed to the parameter every time this function is called
 }
+
 
 export function food_Touching_Snake(board_Location) {
     // If any segment of the snake is at the same position of the location parameter, the entire food_Touching_Snake function returns true
@@ -62,3 +63,8 @@ export function food_Touching_Snake(board_Location) {
     })
 }
 
+
+
+export function add_New_Segment () {
+    
+}

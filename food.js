@@ -1,9 +1,15 @@
+// Written by: Zim Agu
 
-let food_Location = {x:1, y:1}; // The food coordinates aren't an array because food will always take up just one div
+import {food_Touching_Snake} from "./snake.js";
+
+let food_Location = {x:3, y:5}; // The food coordinates aren't an array because food will always take up just one div
 const SNAKE_GROWTH_RATE = 1;
 
+// If the food is touching any part of the snake, the food location changes and the snake expands
 export function update_Food () {
-
+    if ( food_Touching_Snake(food_Location) ) {
+        food_Location = {x:14, y:9};
+    }
 }
 
 export function draw_Food (board) {
