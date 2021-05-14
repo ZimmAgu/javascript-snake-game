@@ -4,6 +4,7 @@ export let snake_Moves_Per_Second = 5;
 export let snake_Speed = 1 / snake_Moves_Per_Second; // If the snake moves 2 times per second, 1/2 means there is 0.5 seconds between each move
 import {user_Moves_The_Snake} from "./user_controls.js";
 
+
 let snake_Body = [ {x:11, y:11} ]; // Each element of this array is a segment of the snake containing it's own x and y values on the grid
 let new_Snake_Segments = 0; 
 
@@ -58,6 +59,14 @@ export function expand_Snake (growth_Amount) {
 }
 
 
+
+export function speed_Snake_Up (boost_Rate) {
+    snake_Moves_Per_Second += boost_Rate; // Speeds up the snake by the value passed into the parameter
+    snake_Speed = 1 / snake_Moves_Per_Second;
+}
+
+
+
 export function food_Touching_Snake(food_Location) {
     // If any segment of the snake is at the same position of the location parameter, the entire food_Touching_Snake function returns true
     return snake_Body.some(snake_Segment => {
@@ -98,3 +107,5 @@ export function get_Snake_Head () {
 export function snake_Touches_Itself () {
     return snake_Touching_Snake(snake_Body[0], {ignore_Snake_Head: true})
 }
+
+
