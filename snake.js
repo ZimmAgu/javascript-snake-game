@@ -58,10 +58,10 @@ export function expand_Snake (growth_Amount) {
 }
 
 
-export function food_Touching_Snake(board_Location) {
+export function food_Touching_Snake(food_Location) {
     // If any segment of the snake is at the same position of the location parameter, the entire food_Touching_Snake function returns true
     return snake_Body.some(snake_Segment => {
-        return (snake_Segment.x == board_Location.x) && (snake_Segment.y == board_Location.y); // When the a segment of the snake is touching the location given on the board location parameter, this return statement returns true, otherwise it returns false
+        return (snake_Segment.x == food_Location.x) && (snake_Segment.y == food_Location.y); // When the a segment of the snake is touching the location given on the board location parameter, this return statement returns true, otherwise it returns false
     })
 }
 
@@ -79,7 +79,22 @@ export function food_Touching_Snake(board_Location) {
 
 
 
+export function snake_Touching_Snake(head_Location, {ignore_Snake_Head = false} = {}) {
+    return snake_Body.some((snake_Segment, current_Segment) => {
+        if (ignore_Snake_Head && current_Segment == 0) // If the current snake segment in the some loop is the head, ignore it and return false. This will ensure that the snake head is be compared to the rest of the body 
+            return false;
+        return (snake_Segment.x == head_Location.x) && (snake_Segment.y == head_Location.y); 
+    })
+}
 
-export function get_Snake_Head() {
-    return snake_Body[0];
+
+export function get_Snake_Head () {
+    return snake_Body[0]; // Needed for the game over function in game_logic.js
+}
+
+
+
+
+export function snake_Touches_Itself () {
+    return snake_Touching_Snake(snake_Body[0], {ignore_Snake_Head: true})
 }
