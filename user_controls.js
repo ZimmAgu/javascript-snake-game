@@ -1,7 +1,6 @@
 // Written By: Zim Agu
 
 let input_Direction = {x: 0, y: 0};
-let previous_Input_Direction = {x: 0, y: 0};
 
 
 window.addEventListener('keydown', event => { // These are the user controls

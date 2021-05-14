@@ -1,6 +1,7 @@
 // Written by: Zim Agu
 
 import {expand_Snake, food_Touching_Snake} from "./snake.js";
+import {random_Grid_Position} from "./grid_Math.js"
 
 let food_Location = {x:3, y:5}; // The food coordinates aren't an array because food will always take up just one div
 const SNAKE_GROWTH_RATE = 1;
@@ -9,7 +10,7 @@ const SNAKE_GROWTH_RATE = 1;
 export function update_Food () {
     if ( food_Touching_Snake(food_Location) ) {
         expand_Snake(SNAKE_GROWTH_RATE);
-        food_Location = {x:14, y:9};
+        food_Location = random_Grid_Position();
     }
 }
 
