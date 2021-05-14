@@ -1,15 +1,19 @@
 // Written by: Zimm Agu
 
-import {snake_Speed} from "./snake.js";
-import {update_Snake, draw_Snake} from "./snake.js";
+import {snake_Speed, update_Snake, draw_Snake, get_Snake_Head} from "./snake.js";
 import {update_Food, draw_Food} from "./food.js";
+import {snake_Is_Off_Board} from "./grid_Math.js";
 
 let game_Board = document.getElementById("snake_game_board");
-
 let previous_Render_Time = 0; 
+let snake_Is_Dead = false;
 
 
 function snake_Game_Loop (current_Render_Time) {
+
+    if (snake_Is_Dead) {
+        return alert('You Lost Nigga');
+    }
 
     window.requestAnimationFrame(snake_Game_Loop); // Recursively calls the itself so the Animation frame can constantly be updated
 
@@ -30,6 +34,14 @@ function snake_Game_Loop (current_Render_Time) {
     game_Board.innerHTML = ''; // Clears HTML tags after the snake is updated to avoid every square that the snake has been from appearing on the screen
     draw_Snake(game_Board); // Draws the snake character onto the screen
     draw_Food(game_Board); // Draws the snake food on to the screen
+    check_For_Game_Over();
 }
 
 window.requestAnimationFrame(snake_Game_Loop);  // Starts the game loop initially
+
+
+
+
+function check_For_Game_Over () {
+    snake_Is_Dead = snake_Is_Off_Board(get_Snake_Head())
+}

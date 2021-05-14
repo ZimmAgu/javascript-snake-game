@@ -75,3 +75,11 @@ export function food_Touching_Snake(board_Location) {
 
     new_Snake_Segments = 0; // Set back to 0 so the snakes stops growing after the loop is iterated through
 }
+
+
+
+
+
+export function get_Snake_Head() {
+    return snake_Body[0];
+}
