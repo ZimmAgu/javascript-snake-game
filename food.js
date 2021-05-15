@@ -5,7 +5,7 @@ import {random_Grid_Position} from "./grid_Math.js"
 
 let food_Location = generate_Food (); // The food coordinates aren't an array because food will always take up just one div
 const SNAKE_GROWTH_RATE = 1;
-const SNAKE_SPEEDUP_RATE = 1;
+const SNAKE_SPEEDUP_RATE = 0.5;
 
 // If the food is touching any part of the snake, the food location changes and the snake expands
 export function update_Food () {

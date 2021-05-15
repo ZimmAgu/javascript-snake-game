@@ -11,8 +11,11 @@ let snake_Is_Dead = false;
 
 function snake_Game_Loop (current_Render_Time) {
 
-    if (snake_Is_Dead) {
-        return alert('You Lost');
+    if (game_Over()) {
+        if (confirm('You Lost. Press OK to Restart')) {
+            window.location.reload();
+        }
+        return;
     }
 
     window.requestAnimationFrame(snake_Game_Loop); // Recursively calls the itself so the Animation frame can constantly be updated
@@ -34,7 +37,7 @@ function snake_Game_Loop (current_Render_Time) {
     game_Board.innerHTML = ''; // Clears HTML tags after the snake is updated to avoid every square that the snake has been from appearing on the screen
     draw_Snake(game_Board); // Draws the snake character onto the screen
     draw_Food(game_Board); // Draws the snake food on to the screen
-    check_For_Game_Over();
+    game_Over();
 }
 
 window.requestAnimationFrame(snake_Game_Loop);  // Starts the game loop initially
@@ -42,6 +45,6 @@ window.requestAnimationFrame(snake_Game_Loop);  // Starts the game loop initiall
 
 
 
-function check_For_Game_Over () {
-    snake_Is_Dead = snake_Is_Off_Board(get_Snake_Head()) || snake_Touches_Itself();
+function game_Over () {
+    return snake_Is_Dead = snake_Is_Off_Board(get_Snake_Head()) || snake_Touches_Itself();
 }
