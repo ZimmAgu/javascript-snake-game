@@ -1,3 +1,5 @@
+// Written by: Zim Agu
+
 const SIZE_OF_BOARD = 21;
 
 // Returns a random coordinate on our grid
