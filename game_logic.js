@@ -9,10 +9,6 @@ let previous_Render_Time = 0;
 let snake_Is_Dead = false;
 
 
-alert('Use the arrow keys or WASD to move the snake\nPress ok to start the game')
-
-
-
 function snake_Game_Loop (current_Render_Time) {
 
 
