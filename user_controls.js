@@ -16,6 +16,11 @@ window.addEventListener('keydown', event => { // These are the user controls
                 break;
             input_Direction = {x: 0, y: -1};
             break;
+        case 'W':
+            if (input_Direction.y != 0)
+                break;
+            input_Direction = {x: 0, y: -1};
+            break;
 
         // If the user presses the left arrow or a, the snake will move left
         case 'ArrowLeft':
@@ -24,6 +29,11 @@ window.addEventListener('keydown', event => { // These are the user controls
             input_Direction = {x: -1, y: 0};
             break;
         case 'a':
+            if (input_Direction.x != 0)
+                break;
+            input_Direction = {x: -1, y: 0};
+            break;
+        case 'A':
             if (input_Direction.x != 0)
                 break;
             input_Direction = {x: -1, y: 0};
@@ -40,6 +50,11 @@ window.addEventListener('keydown', event => { // These are the user controls
                 break;
             input_Direction = {x: 0, y: 1};
             break;
+        case 'S':
+            if (input_Direction.y != 0)
+                break;
+            input_Direction = {x: 0, y: 1};
+            break;
 
         // If the user presses the right arrow or d, the snake will move right
         case 'ArrowRight':
@@ -48,6 +63,11 @@ window.addEventListener('keydown', event => { // These are the user controls
             input_Direction = {x: 1, y: 0};
             break;
         case 'd':
+            if (input_Direction.x != 0)
+                break;
+            input_Direction = {x: 1, y: 0};
+            break;
+        case 'D':
             if (input_Direction.x != 0)
                 break;
             input_Direction = {x: 1, y: 0};
