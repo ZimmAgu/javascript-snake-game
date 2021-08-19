@@ -2,17 +2,22 @@
 
 import {expand_Snake, food_Touching_Snake, speed_Snake_Up} from "./snake.js";
 import {random_Grid_Position} from "./grid_Math.js"
+import { getScore } from "./score.js"
 
 let food_Location = generate_Food (); // The food coordinates aren't an array because food will always take up just one div
 const SNAKE_GROWTH_RATE = 1;
 const SNAKE_SPEEDUP_RATE = 0.25;
+let foodEaten = 0;
 
 // If the food is touching any part of the snake, the food location changes and the snake expands
 export function update_Food () {
+    
     if (food_Touching_Snake(food_Location)) {
+        foodEaten += 1;
+        getScore(foodEaten);
         expand_Snake(SNAKE_GROWTH_RATE);
         speed_Snake_Up(SNAKE_SPEEDUP_RATE);
-        food_Location = generate_Food ();
+        food_Location = generate_Food();
     }
 }
 
