@@ -26,7 +26,6 @@ export function showScoreBoard (board) {
 
 export function getScore (score) {
     
-    console.log(snakeScore)
 
     if (score) {
         snakeScore = score;  
